@@ -308,7 +308,59 @@
 	</aside>
 
 
-	<!-- Cart -->
+	<a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Parekh%20Rayon,%20I%20have%20a%20trade%20enquiry." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Support" class="whatsapp-icon">
+</a>
+
+<style>
+/* Floating Button Styling */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px; /* Desktop par thoda upar */
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 99999; /* Isse button hamesha top par rahega */
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 991px) {
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px; /* Mobile par thoda niche aur corner mein */
+        right: 20px;
+    }
+    .whatsapp-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+</style>
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
 
