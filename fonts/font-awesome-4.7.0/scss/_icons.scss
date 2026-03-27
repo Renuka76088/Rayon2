@@ -347,7 +347,7 @@
 .#{$fa-css-prefix}-eur:before { content: $fa-var-eur; }
 .#{$fa-css-prefix}-gbp:before { content: $fa-var-gbp; }
 .#{$fa-css-prefix}-dollar:before,
-.#{$fa-css-prefix}-usd:before { content: $fa-var-usd; }
+.#{$fa-css-prefix}-:before { content: $fa-var-; }
 .#{$fa-css-prefix}-rupee:before,
 .#{$fa-css-prefix}-inr:before { content: $fa-var-inr; }
 .#{$fa-css-prefix}-cny:before,
