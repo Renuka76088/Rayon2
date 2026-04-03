@@ -107,7 +107,7 @@
     <span style="color: #717fe0; font-weight: 900; font-size: 24px; font-family: 'Arial Black', sans-serif;">RAYON</span>
 </div>
         <div style="color: black; font-size: 12px; font-weight: bold; letter-spacing: 4px; margin-top: 2px; text-transform: uppercase;">
-            RAIPUR • CG
+            RAIPUR • INDIA
         </div>
     </div>
 </a>
@@ -177,7 +177,7 @@
                 <span style="color: #717fe0; font-weight: 900; font-size: 20px; font-family: 'Arial Black', sans-serif;">RAYON</span>
             </div>
             <div style="color: #444; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; margin-top: 2px; text-transform: uppercase;">
-                RAIPUR • CG
+                RAIPUR • INDIA
             </div>
         </div>
     </a>
@@ -298,99 +298,105 @@
 </a>
 
 <style>
-/* Floating Button Styling */
+/* --- Video and Map Styling --- */
+.map-wrapper-outer {
+   
+  
+    background: #fff;
+}
+
+.map-wrapper-outer {
+    background: #fff;
+    padding: 20px;
+    width: 100%;
+}
+
+.map-container {
+    position: relative;
+    max-width: 1000px; 
+    margin: 0 auto;
+    /* Ratio maintain karne ke liye border hata kar check karein */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    /*overflow: hidden;*/ /* Ise comment karke dekhein agar abhi bhi kate */
+}
+
+/* Video ko container ke andar fix rakhne ke liye */
+.video-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ise 'cover' ki jagah 'fill' try karein taaki SVG boundary mein rahe */
+  
+}
+
+#INDIA-map-svg {
+    display: block; /* Gap hatane ke liye */
+    width: 100%;
+    height: auto; 
+    overflow: visible; /* Taki content cut na ho */
+}
+/* WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 30px; /* Desktop par thoda upar */
+    bottom: 30px;
     right: 30px;
     background-color: #25d366;
     color: #FFF;
     border-radius: 50px;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    z-index: 99999; /* Isse button hamesha top par rahega */
+    z-index: 99999;
     transition: all 0.3s ease;
 }
 
-.whatsapp-icon {
-    width: 35px;
-    height: 35px;
-}
-
-/* Hover Effect */
 .whatsapp-float:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(10deg);
     background-color: #128c7e;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
-/* Mobile Responsive Adjustments */
-@media (max-width: 991px) {
-    .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        bottom: 20px; /* Mobile par thoda niche aur corner mein */
-        right: 20px;
-    }
-    .whatsapp-icon {
-        width: 30px;
-        height: 30px;
-    }
+@media (max-width: 768px) {
+   
+    .whatsapp-float { width: 55px; height: 55px; bottom: 20px; right: 20px; }
 }
 </style>
 
-
 <div id="colorlib-main-content">
-    <!-- Yeh naya wrapper map ko right mein laayega -->
     <div class="map-wrapper-outer">
         <div class="map-container">
-            <svg viewBox="0 0 1000 1000" id="india-map-svg" style="width: 100%; height: auto;">
-                <rect x="20" y="20" width="960" height="960" fill="none" stroke="#ddd" stroke-width="8" />
+            <svg viewBox="0 0 1000 1000" id="INDIA-map-svg" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto;">
+                
+                <rect x="20" y="20" width="960" height="960" fill="none" stroke="#f0f0f0" stroke-width="2" />
 
-                <text x="500" y="70" text-anchor="middle" font-size="29" font-weight="700" fill="#070c12">
-                    HC PAREKH & ASSOCIATES
-                </text>
+         
 
-                <text x="500" y="105" text-anchor="middle" font-size="15" fill="#0f172b">
-                    www.hcparekh.com
-                </text>
-
-                <image 
-                    href="https://img.freepik.com/premium-vector/vector-map-black-outline-india-vector-illustration_686498-514.jpg?w=1060" 
-                    x="40" y="130" width="920" height="820" 
-                    preserveAspectRatio="xMidYMid meet" 
-                    opacity="0.28" 
-                />
+                <foreignObject x="40" y="130" width="920" height="820">
+                    <div xmlns="http://www.w3.org/1999/xhtml" class="video-container">
+                        <video autoplay loop muted playsinline class="bg-video">
+                            <source src="images/Vedio.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </foreignObject>
 
                 <g id="pins-layer"></g>
             </svg>
         </div>
     </div>
 </div>
-<style>
-/* 📱 Mobile aur Desktop dono ke liye styling */
-.map-wrapper-outer {
-    /* Navbar ki height ke hisaab se ise adjust karein (e.g. 80px to 120px) */
-    margin-top: 90px; 
-    padding: 20px;
-    background: #fff; /* Optional: background clean rakhne ke liye */
-}
 
-/* Agar mobile par navbar aur bada ho jata hai toh */
-@media (max-width: 768px) {
-    .map-wrapper-outer {
-        margin-top: 70px; 
-        padding: 10px;
-    }
-}
-</style>
-
-
+<a href="https://wa.me/YOUR_NUMBER" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="35" height="35" alt="WhatsApp" />
+</a>
 
 <footer class="bg3 p-t-75 p-b-32">
     <div class="container">
@@ -408,7 +414,7 @@
     <span style="color: #717fe0; font-weight: 900; font-size: 20px; font-family: 'Arial Black', sans-serif;">RAYON</span>
 </div>
             <div style="color: #b2b2b2; font-size: 10px; font-weight: 800; letter-spacing: 2.5px; margin-top: 4px; text-transform: uppercase;">
-                RAIPUR•CG
+                RAIPUR•INDIA
             </div>
         </div>
     </a>
@@ -453,7 +459,7 @@
                 </h4>
 
                 <p class="stext-107 cl7 size-201" style="font-size: 16px; line-height: 1.6;">
-                    HC Parekh & Associates, Industrial Area, RAIPUR, CG 452015. <br>
+                    HC Parekh & Associates, Industrial Area, RAIPUR, INDIA <br>
                     <strong>Call:</strong> (+91) 98XXX XXXXX
                 </p>
 
@@ -503,7 +509,7 @@
             </div>
 
             <p class="stext-107 cl6 txt-center" style="font-size: 15px;">
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <strong>HC Parekh & Associates</strong> | Crafted in RAIPUR, CG.
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <strong>HC Parekh & Associates</strong> | Crafted in RAIPUR, INDIA.
             </p>
         </div>
     </div>
@@ -518,99 +524,7 @@
 	</div>
 
 
-    
-<script>
-   const locations = [
-        { id: 1, name: "Parekh Fabrics", city: "Ahmedabad", x: 330, y: 520 },
-        { id: 2, name: "Parekh Silk", city: "Surat", x: 350, y: 600 },
-        { id: 3, name: "Parekh Rayon", city: "Raipur", x: 510, y: 555 },
-        { id: 4, name: "Parekh Linen", city: "Kolkata", x: 625, y: 545 },
-        { id: 5, name: "Parekh e-Trade Market (Textile)", city: "Hyderabad", x: 460, y: 645 },
-        { id: 6, name: "Parekh Chamber of Textile", city: "Bangalore", x: 405, y: 725 },
-        { id: 7, name: "Parekh Southern Polyfabrics", city: "Chennai", x: 475, y: 755 },
-    ];
 
-    const pinsLayer = document.getElementById('pins-layer');
-
-    function createPins() {
-        locations.forEach((loc, index) => {
-            // Adjust Label Positions (Logic from your React code)
-            let labelX = loc.x;
-            let labelY = loc.y - 35;
-            let textAnchor = "middle";
-
-            if (loc.id === 6) {
-                labelX = loc.x - 40;
-                labelY = loc.y - 5;
-                textAnchor = "end";
-            } else if (loc.id === 7) {
-                labelX = loc.x + 40;
-                labelY = loc.y - 5;
-                textAnchor = "start";
-            }
-
-            // Create SVG Group
-            const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-            g.setAttribute("class", "pin-group");
-            g.style.opacity = "0";
-            
-            // Animation for appearance
-            setTimeout(() => {
-                g.style.opacity = "1";
-            }, index * 120 + 100);
-
-            // 1. Pulsing Glow
-            const glow = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            glow.setAttribute("cx", loc.x);
-            glow.setAttribute("cy", loc.y);
-            glow.setAttribute("r", "10");
-            glow.setAttribute("fill", "none");
-            glow.setAttribute("stroke", "#d32f2f");
-            glow.innerHTML = `
-                <animate attributeName="r" values="10;22" dur="1.5s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.7;0" dur="1.5s" repeatCount="indefinite" />
-            `;
-
-            // 2. Blinking Center Dot
-            const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-            dot.setAttribute("cx", loc.x);
-            dot.setAttribute("cy", loc.y);
-            dot.setAttribute("r", "6");
-            dot.setAttribute("fill", "#d32f2f");
-            dot.innerHTML = `
-                <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite" />
-            `;
-
-            // 3. Text (Name and City)
-            const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-            text.setAttribute("x", labelX);
-            text.setAttribute("y", labelY);
-            text.setAttribute("text-anchor", textAnchor);
-            text.setAttribute("font-size", "14");
-            text.setAttribute("font-weight", "700");
-            text.setAttribute("fill", "#1a237e");
-            text.innerHTML = `
-                <tspan x="${labelX}" dy="0">${loc.name}</tspan>
-                <tspan x="${labelX}" dy="18" font-size="12" font-weight="600" fill="#555">${loc.city}</tspan>
-            `;
-
-            // Append everything
-            g.appendChild(glow);
-            g.appendChild(dot);
-            g.appendChild(text);
-            pinsLayer.appendChild(g);
-            
-            // Click event
-            g.addEventListener('click', () => {
-                console.log("Selected Location:", loc.name);
-                // Aap yahan click par koi bhi action add kar sakte hain
-            });
-        });
-    }
-
-    // Initialize
-    createPins();
-</script>
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
